@@ -1,5 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@300;400;600&display=swap");
+:root {
+  --font: "Exo", sans-serif;
+}
+body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
 .App {
   min-height: 100vh;
+  background-color: #f7f7f7;
+  position: relative;
+}
+.movie-container {
+  min-height: 145vh;
+  background-image: url("./assets/main-background.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.movie-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  top: 2em;
+}
+.main-heading {
+  font-family: var(--font);
+  font-size: 3rem;
+  color: #ffffff;
+  max-width: 12em;
+}
+.movie-name-input {
+  background: #d6f3ff;
+  border-radius: 10px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  outline: none;
+  border: none;
+  color: #08374b;
+  width: 20em;
+}
+::placeholder {
+  font-family: var(--font);
+  color: #08374b;
+  font-weight: bold;
+}
+.sub-heading {
+  font-family: var(--font);
+  font-weight: bold;
+  font-size: 2em;
+  color: #ffffff;
+}
+.movie-options {
+  color: #043d56;
+  background-color: #ade4fb;
+  border-radius: 10px;
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5em;
+  flex-direction: column;
+  margin-bottom: 2.5em;
+}
+.option-set-1 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+label {
+  font-family: var(--font);
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: #043d56;
+}
+input[type="checkbox"] {
+  width: 1.2em;
+  height: 1.2em;
+  margin-right: 0.5em;
+  border: none;
+  outline: 2px solid #043d56;
+  border-radius: 5px;
+  background: transparent;
+}
+.result-button {
+  background: #0c5a7a;
+  border-radius: 10px;
+  padding: 0.5em 1em;
+  font-size: 1.6rem;
+  color: white;
+  border: none;
+  outline: none;
+}
+
+/* result styles */
+.result-main {
+  min-height: 100vh;
   display: grid;
-  place-items: center;
+  place-content: center;
+}
+.result-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 2em;
+  flex-direction: column;
+}
+.result-right {
+  max-width: 45em;
+  margin-bottom: 2em;
+}
+
+/* making it responsive */
+@media screen and (max-width: 900px) {
+  .movie-container {
+    min-height: 175vh;
+    width: 100%;
+  }
+  .movie-content {
+    flex-direction: column-reverse;
+    margin: 0 1em;
+  }
+  .movie-options {
+    max-width: 19em;
+  }
+  .main-heading {
+    font-size: 2.5rem;
+    max-width: 8em;
+  }
+  .movie-name-input {
+    width: 10em;
+  }
+  .movie-right {
+    text-align: center;
+  }
+  .movie-woman {
+    width: 80%;
+  }
+  .result-right {
+    margin: 0 1em;
+  }
 }
