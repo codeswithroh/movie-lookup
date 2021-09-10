@@ -30,10 +30,13 @@ export default function App() {
   const [poster, setposter] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
+    window.scrollTo({
+      top: 1000,
+      behavior: "smooth",
+    });
     axios
       .get(`https://www.omdbapi.com/?apikey=5677e549&t=${movie}&plot=full`)
       .then((res) => {
-        console.log(res.data);
         setresult(true);
         setapimoviename(res.data.Title);
         setapidirector(res.data.Director);
@@ -48,7 +51,7 @@ export default function App() {
         setapiwriter(res.data.Writer);
       })
       .catch((err) => {
-        console.log(err);
+        alert("Sorry we couldn't find your movie 😥");
       });
   };
   return (
@@ -173,79 +176,79 @@ export default function App() {
         <div className="result-main">
           <div className="result-container">
             <div className="result-left">
-              <h1>{apimoviename}</h1>
-              <img src={poster} alt="" />
+              <h1 className="movie-heading">{apimoviename}</h1>
+              <img className="poster" src={poster} alt="" />
             </div>
             <div className="result-right">
               {actors ? (
-                <h2>
-                  <span className="titles">Actors: </span>
-                  {apiactors}
-                </h2>
+                <div className="movie-selected-details">
+                  <h2 className="titles">Actors: </h2>
+                  <h2 className="apicalls">{apiactors}</h2>
+                </div>
               ) : (
                 <></>
               )}
               {awards ? (
-                <h2>
-                  <span className="titles">Awards: </span>
-                  {apiawards}
-                </h2>
+                <div className="movie-selected-details">
+                  <h2 className="titles">Awards: </h2>
+                  <h2 className="apicalls">{apiawards}</h2>
+                </div>
               ) : (
                 <></>
               )}
               {release ? (
-                <h2>
-                  <span className="titles">Release Date: </span>
-                  {apirelease}
-                </h2>
+                <div className="movie-selected-details">
+                  <h2 className="titles">Release Date: </h2>
+                  <h2 className="apicalls">{apirelease}</h2>
+                </div>
               ) : (
                 <></>
               )}
               {earnings ? (
-                <h2>
-                  <span className="titles">Total Earnings: </span>
-                  {apiearnings}
-                </h2>
+                <div className="movie-selected-details">
+                  <h2 className="titles">Total Earnings: </h2>
+                  <h2 className="apicalls">{apiearnings}</h2>
+                </div>
               ) : (
                 <></>
               )}
               {runtime ? (
-                <h2>
-                  <span className="titles">Total Runtime: </span>
-                  {apiruntime}
-                </h2>
+                <div className="movie-selected-details">
+                  <h2 className="titles">Total Runtime: </h2>
+                  <h2 className="apicalls">{apiruntime}</h2>
+                </div>
               ) : (
                 <></>
               )}
               {writer ? (
-                <h2>
-                  <span className="titles">Writers: </span>
-                  {apiwriter}
-                </h2>
+                <div className="movie-selected-details">
+                  <h2 className="titles">Writers: </h2>
+                  <h2 className="apicalls">{apiwriter}</h2>
+                </div>
               ) : (
                 <></>
               )}
               {director ? (
-                <h2>
-                  <span className="titles">Director: </span>
-                  {apidirector}
-                </h2>
+                <div className="movie-selected-details">
+                  <h2 className="titles">Director: </h2>
+                  <h2 className="apicalls">{apidirector}</h2>
+                </div>
               ) : (
                 <></>
               )}
               {genre ? (
-                <h2>
-                  <span className="titles">Genre: </span>
-                  {apigenre}
-                </h2>
+                <div className="movie-selected-details">
+                  <h2 className="titles">Genre: </h2>
+                  <h2 className="apicalls">{apigenre}</h2>
+                </div>
               ) : (
                 <></>
               )}
               {plot ? (
-                <h2 className="movie-plot">
-                  <span className="titles">Plot: </span>
-                  {apiplot}
-                </h2>
+                <div className="movie-selected-details special">
+                  <h2 className="titles">Plot: </h2>
+                  <h2 className="apicalls plot">{apiplot}</h2>
+                </div>
               ) : (
                 <></>
               )}

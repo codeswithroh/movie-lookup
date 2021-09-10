@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Exo:wght@300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@300;400;600&family=Montserrat&display=swap");
 :root {
   --font: "Exo", sans-serif;
 }
@@ -96,6 +96,12 @@ input[type="checkbox"] {
   color: white;
   border: none;
   outline: none;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.result-button:hover {
+  color: #0c5a7a;
+  background-color: white;
 }
 
 /* result styles */
@@ -112,13 +118,70 @@ input[type="checkbox"] {
   gap: 2em;
   flex-direction: column;
 }
+.result-left {
+  text-align: center;
+}
 .result-right {
   max-width: 45em;
   margin-bottom: 2em;
 }
+.poster {
+  box-shadow: -16px -16px 32px #fafbff, 16px 16px 32px #a6abbd;
+}
+.movie-selected-details {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1em;
+  border-radius: 10px;
+  background: linear-gradient(
+      135.37deg,
+      rgba(0, 0, 0, 0.4) 4.29%,
+      rgba(255, 255, 255, 0.4) 95.6%
+    ),
+    #eaecf0;
+  background-blend-mode: soft-light, normal;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-sizing: border-box;
+  box-shadow: -9px -9px 16px #fafbff, 9px 9px 16px #a6abbd;
+  padding: 0.5em 1.5em;
+  margin: 1.5em 0;
+}
+.special {
+  align-items: flex-start !important;
+}
+.apicalls {
+  font-family: "Montserrat", sans-serif;
+  color: #32499e;
+}
+.plot {
+  line-height: 2.1rem;
+}
+.movie-heading {
+  font-family: var(--font);
+  font-weight: bold;
+  font-size: 3rem;
+  text-align: center;
+  color: #32499e;
+}
+.titles {
+  font-family: var(--font);
+  font-weight: bold;
+  font-size: 2rem;
+  color: #000000;
+}
 
 /* making it responsive */
 @media screen and (max-width: 900px) {
+  .movie-selected-details {
+    margin: 1.5em 1em;
+  }
+  .titles {
+    font-size: 1.5rem;
+  }
+  .apicalls {
+    font-size: 1rem;
+  }
   .movie-container {
     min-height: 175vh;
     width: 100%;
