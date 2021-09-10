@@ -31,7 +31,7 @@ export default function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .get(`http://www.omdbapi.com/?apikey=5677e549&t=${movie}&plot=full`)
+      .get(`https://www.omdbapi.com/?apikey=5677e549&t=${movie}&plot=full`)
       .then((res) => {
         console.log(res.data);
         setresult(true);
