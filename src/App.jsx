@@ -30,14 +30,14 @@ export default function App() {
   const [poster, setposter] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
-    window.scrollTo({
-      top: 1000,
-      behavior: "smooth",
-    });
     axios
       .get(`https://www.omdbapi.com/?apikey=5677e549&t=${movie}&plot=full`)
       .then((res) => {
         setresult(true);
+        window.scrollTo({
+          top: 1000,
+          behavior: "smooth",
+        });
         setapimoviename(res.data.Title);
         setapidirector(res.data.Director);
         setapigenre(res.data.Genre);

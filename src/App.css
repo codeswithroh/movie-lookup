@@ -127,6 +127,10 @@ input[type="checkbox"] {
 }
 .poster {
   box-shadow: -16px -16px 32px #fafbff, 16px 16px 32px #a6abbd;
+  transition: 0.5s;
+}
+.poster:hover {
+  transform: scale(1.1);
 }
 .movie-selected-details {
   display: flex;
